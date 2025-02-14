@@ -1,0 +1,10 @@
+{
+	admin off
+	auto_https ignore_loaded_certs
+}
+
+localhost, ai.local {
+	encode zstd gzip
+	tls /etc/caddy/certs/dev.crt /etc/caddy/certs/dev.key
+	reverse_proxy openwebui:8080
+}

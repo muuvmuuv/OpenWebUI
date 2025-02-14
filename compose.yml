@@ -1,0 +1,16 @@
+services:
+  proxy:
+    image: caddy:alpine
+    restart: always
+    ports:
+      - "3000:443"
+      - "3000:443/udp"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./ssl:/etc/caddy/certs
+  openwebui:
+    image: ghcr.io/open-webui/open-webui:main
+    container_name: open-webui
+    restart: always
+    volumes:
+      - ./data:/app/backend/data
