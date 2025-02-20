@@ -3,8 +3,8 @@ services:
     image: caddy:alpine
     restart: always
     ports:
-      - "3000:443"
-      - "3000:443/udp"
+      - "5823:443"
+      - "5823:443/udp"
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
       - ./ssl:/etc/caddy/certs
