@@ -6,5 +6,6 @@
 localhost, ai.local {
 	encode zstd gzip
 	tls /etc/caddy/certs/dev.crt /etc/caddy/certs/dev.key
+	#reverse_proxy /tei* hftei:8080
 	reverse_proxy openwebui:8080
 }
